@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "SNSSQSWorkerServiceSubscriber": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

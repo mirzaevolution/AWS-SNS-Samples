@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSPublisher", "SNSPublisher\SNSPublisher.csproj", "{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSModels", "SNSModels\SNSModels.csproj", "{886BF8DB-F02D-40B0-B264-09BBDE273C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSWebhookSubscriber", "SNSWebhookSubscriber\SNSWebhookSubscriber.csproj", "{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSSQSWorkerServiceSubscriber", "SNSSQSWorkerServiceSubscriber\SNSSQSWorkerServiceSubscriber.csproj", "{57A94B61-AF1D-4F27-B312-BD379073496F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886BF8DB-F02D-40B0-B264-09BBDE273C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886BF8DB-F02D-40B0-B264-09BBDE273C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886BF8DB-F02D-40B0-B264-09BBDE273C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886BF8DB-F02D-40B0-B264-09BBDE273C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A94B61-AF1D-4F27-B312-BD379073496F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A94B61-AF1D-4F27-B312-BD379073496F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A94B61-AF1D-4F27-B312-BD379073496F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A94B61-AF1D-4F27-B312-BD379073496F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EED1C87-F929-4331-9D38-7CFAE801E688}
+	EndGlobalSection
+EndGlobal
