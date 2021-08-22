@@ -1,60 +1,53 @@
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Configuration;
-using SNSModels;
-using Newtonsoft.Json;
 
 namespace SNSSQSWorkerServiceSubscriber
 {
-    public class Worker : BackgroundService
+    public class S3Worker : BackgroundService
     {
         private readonly IAmazonSQS _sqsClient;
         private readonly IConfiguration _configuration;
-        private readonly ILogger<Worker> _logger;
-        public Worker(
+        private readonly ILogger<S3Worker> _logger;
+        public S3Worker(
             IAmazonSQS sqsClient,
             IConfiguration configuration,
-            ILogger<Worker> logger)
+            ILogger<S3Worker> logger)
         {
             _sqsClient = sqsClient;
             _configuration = configuration;
             _logger = logger;
         }
-
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
                 var response = await _sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest
                 {
-                    QueueUrl = _configuration["AWS:QueueUrl"]
+                    QueueUrl = _configuration["AWS:S3SNSQueueUrl"]
                 });
-                if(response.HttpStatusCode == System.Net.HttpStatusCode.OK && response.Messages.Count>0)
+                if (response.HttpStatusCode == System.Net.HttpStatusCode.OK && response.Messages.Count > 0)
                 {
-                    _logger.LogInformation($"Received a message....");
-                    foreach(Message message in response.Messages)
+                    foreach (Message message in response.Messages)
                     {
                         try
                         {
                             var snsBodyMessage = Amazon.SimpleNotificationService.Util.Message.ParseMessage(message.Body);
-                            EventMessage eventMessage = JsonConvert.DeserializeObject<EventMessage>(snsBodyMessage.MessageText);
-                            Console.WriteLine($"       Id: {eventMessage.Id}\n" +
-                                              $"  Message: {eventMessage.Message}\n" +
-                                              $"Timestamp: {eventMessage.TimestampUtc}");
+                            Console.WriteLine("\n----------------------------------------------------");
+                            Console.WriteLine("****From S3 Core Events****");
+                            Console.WriteLine(snsBodyMessage.MessageText);
                             await _sqsClient.DeleteMessageAsync(new DeleteMessageRequest
                             {
-                                QueueUrl = _configuration["AWS:QueueUrl"],
+                                QueueUrl = _configuration["AWS:S3SNSQueueUrl"],
                                 ReceiptHandle = message.ReceiptHandle
                             });
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             _logger.LogError(ex.ToString());
                         }

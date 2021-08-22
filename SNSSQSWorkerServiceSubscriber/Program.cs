@@ -1,9 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Amazon.SQS;
 using Microsoft.Extensions.Configuration;
 
@@ -21,7 +17,8 @@ namespace SNSSQSWorkerServiceSubscriber
                 .ConfigureServices((hostContext, services) =>
                 {
                     var configuration = hostContext.Configuration;
-                    services.AddHostedService<Worker>();
+                    services.AddHostedService<SQSWorker>();
+                    services.AddHostedService<S3Worker>();
                     services.AddAWSService<IAmazonSQS>(configuration.GetAWSOptions());
                 });
     }

@@ -3,13 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSPublisher", "SNSPublisher\SNSPublisher.csproj", "{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SNSPublisher", "SNSPublisher\SNSPublisher.csproj", "{0D51BAD8-5ABE-4F98-ADB6-009AC780CF0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSModels", "SNSModels\SNSModels.csproj", "{886BF8DB-F02D-40B0-B264-09BBDE273C3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SNSModels", "SNSModels\SNSModels.csproj", "{886BF8DB-F02D-40B0-B264-09BBDE273C3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSWebhookSubscriber", "SNSWebhookSubscriber\SNSWebhookSubscriber.csproj", "{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SNSWebhookSubscriber", "SNSWebhookSubscriber\SNSWebhookSubscriber.csproj", "{DF95965D-ED49-450E-B6B1-592BEEAFC4F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSSQSWorkerServiceSubscriber", "SNSSQSWorkerServiceSubscriber\SNSSQSWorkerServiceSubscriber.csproj", "{57A94B61-AF1D-4F27-B312-BD379073496F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SNSSQSWorkerServiceSubscriber", "SNSSQSWorkerServiceSubscriber\SNSSQSWorkerServiceSubscriber.csproj", "{57A94B61-AF1D-4F27-B312-BD379073496F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rewind", "Rewind", "{40CD3349-5E87-4D2E-B65B-5F3EC279D1C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Standard", "Standard", "{63398342-4E20-4CB3-88C6-06C2B477B124}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Webhook", "Webhook", "{D08EE839-856F-4A40-8C71-EC9E93AE3A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SNSWebhookHandler", "SNSWebhookHandler\SNSWebhookHandler.csproj", "{AFA18777-6A25-45E4-BEF1-60CFCB35ACE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +41,18 @@ Global
 		{57A94B61-AF1D-4F27-B312-BD379073496F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57A94B61-AF1D-4F27-B312-BD379073496F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57A94B61-AF1D-4F27-B312-BD379073496F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA18777-6A25-45E4-BEF1-60CFCB35ACE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA18777-6A25-45E4-BEF1-60CFCB35ACE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA18777-6A25-45E4-BEF1-60CFCB35ACE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA18777-6A25-45E4-BEF1-60CFCB35ACE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63398342-4E20-4CB3-88C6-06C2B477B124} = {40CD3349-5E87-4D2E-B65B-5F3EC279D1C2}
+		{D08EE839-856F-4A40-8C71-EC9E93AE3A97} = {63398342-4E20-4CB3-88C6-06C2B477B124}
+		{AFA18777-6A25-45E4-BEF1-60CFCB35ACE1} = {D08EE839-856F-4A40-8C71-EC9E93AE3A97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4EED1C87-F929-4331-9D38-7CFAE801E688}

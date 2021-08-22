@@ -51,7 +51,7 @@ namespace SNSWebhookSubscriber.Controllers
                             });
                             _logger.LogInformation($"Confirmation result: {(int)result.HttpStatusCode}");
                             if (result.HttpStatusCode == HttpStatusCode.OK)
-                                return Ok();
+                                return Ok(); 
                             return BadRequest();
                         }
                     case Message.MESSAGE_TYPE_NOTIFICATION:
